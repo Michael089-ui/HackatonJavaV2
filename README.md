@@ -23,8 +23,6 @@ Entorno de desarrollo: IntelliJ IDEA / Eclipse / VS Code
 
 Herramientas estándar de entrada/salida (Scanner, ArrayList)
 
----------------------------------------------------------------------------------------------------
-
 AgendaTelefonica/
 ├── 📄 Main.java       → Menú principal con interacción desde consola
 ├── 📄 Agenda.java     → Lógica de almacenamiento y operaciones con contactos
