@@ -104,17 +104,17 @@ public class AplicativoAgenda extends Application {
         return crearVBox(nombre, apellido, telefono, boton, mensaje);
     }
 
-    /*TAB2 LISTAR.      */
+    /*TAB2 LISTAR. BOTÓN LISTAR*/
     private VBox crearContenidoListar() {
         TextArea area = new TextArea();
         area.setEditable(false);
-        area.setPromptText("Los contactos aparecerán aquí.");
+        area.setPromptText("Los contactos aparecerán aquí");
 
         Button boton = new Button("Listar contactos");
         boton.getStyleClass().add("btn-info");
 
+        //FUNCION PARA EXPONER LISTAS
         boton.setOnAction(e -> {
-            // Usamos reflexión temporal o puedes modificar Agenda para exponer lista
             try {
                 java.lang.reflect.Field field = Agenda.class.getDeclaredField("contactos");
                 field.setAccessible(true);
@@ -133,17 +133,14 @@ public class AplicativoAgenda extends Application {
                     area.setText(sb.toString());
                 }
             } catch (Exception ex) {
-                area.setText("Error al acceder a los contactos.");
+                area.setText("Error");
             }
         });
 
         return crearVBox(boton, area);
     }
 
-    /**
-     * Crea el contenido para la pestaña "Buscar contacto"
-     * Permite ingresar nombre y apellido para buscar existencia.
-     */
+    /*TAB3 BUSCAR. ESPACIOS DE NOMBRE, APELLIDO. BOTON BUSCAR*/
     private VBox crearContenidoBuscar() {
         TextField nombre = new TextField();
         nombre.setPromptText("Nombre");
@@ -164,10 +161,7 @@ public class AplicativoAgenda extends Application {
         return crearVBox(nombre, apellido, boton, resultado);
     }
 
-    /**
-     * Crea el contenido para la pestaña "Modificar teléfono"
-     * Permite ingresar nombre, apellido y nuevo teléfono para actualizar.
-     */
+    /*TAB4 MODIFICAR TELEFONO. ESPACIOS PARA NOMBRE, APELLIDO, TELEFONO. BOTON*/
     private VBox crearContenidoModificar() {
         TextField nombre = new TextField();
         nombre.setPromptText("Nombre");
@@ -183,18 +177,16 @@ public class AplicativoAgenda extends Application {
         Button boton = new Button("Modificar");
         boton.getStyleClass().add("btn-warning");
 
+        //MENSAJE CON EVENT AL SETTEAR BOTON.
         boton.setOnAction(e -> {
             agenda.editarTelefono(nombre.getText(), apellido.getText(), nuevoTel.getText());
-            resultado.setText("✅ Teléfono modificado (si el contacto existía).");
+            resultado.setText("✅ Teléfono modificado");
         });
 
         return crearVBox(nombre, apellido, nuevoTel, boton, resultado);
     }
 
-    /**
-     * Crea el contenido para la pestaña "Eliminar contacto"
-     * Permite ingresar nombre y apellido para eliminar un contacto.
-     */
+    /*TAB5. ELIMINAR. EVENTO AL INICIAR BOTON*/
     private VBox crearContenidoEliminar() {
         TextField nombre = new TextField();
         nombre.setPromptText("Nombre");
@@ -209,13 +201,13 @@ public class AplicativoAgenda extends Application {
 
         boton.setOnAction(e -> {
             agenda.eliminarContacto(nombre.getText(), apellido.getText());
-            confirmacion.setText("✅ Contacto eliminado (si existía).");
+            confirmacion.setText("✅ Contacto eliminado");
         });
 
         return crearVBox(nombre, apellido, boton, confirmacion);
     }
 
-    /*TAB
+    /*TAB6 mostrar espacio
     BOTON FUNCION
     LABEL PARA VER RESULTADO AL ACTIVAR FUNCIÓN
     */
@@ -225,8 +217,8 @@ public class AplicativoAgenda extends Application {
         Button boton = new Button("Mostrar espacio");
         boton.getStyleClass().add("btn-dark");
 
+        //PLANTILLA MODIFICAR. EVENTO ACCIONAR, BUSCAR REFLEXION Y TRAER ESPACIO DISPONIBLE
         boton.setOnAction(e -> {
-            // Usamos reflexión para obtener cantidad máxima y actual
             try {
                 java.lang.reflect.Field field = Agenda.class.getDeclaredField("contactos");
                 field.setAccessible(true);
@@ -246,8 +238,7 @@ public class AplicativoAgenda extends Application {
         return crearVBox(boton, resultado);
     }
 
-    /*
-    BOOTSTRAPFX AYUDA A ESPACIAR EN CONTENEDOR PADDING Y MARGIN Y GAP*/
+    /*BOOTSTRAPFX AYUDA A ESPACIAR EN CONTENEDOR PADDING Y MARGIN Y GAP*/
     private VBox crearVBox(javafx.scene.Node... nodos) {
         VBox vbox = new VBox(10);
         vbox.setPadding(new Insets(15));
