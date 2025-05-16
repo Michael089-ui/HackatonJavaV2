@@ -29,7 +29,7 @@ AgendaTelefonica/
 ├── 📄 Main.java       → Menú principal con interacción desde consola
 ├── 📄 Agenda.java     → Lógica de almacenamiento y operaciones con contactos
 └── 📄 Contacto.java   → Clase base que representa un contacto
-------------------------------------------------------------------------------------------------------------
+ 
 🚀 Cómo ejecutar el proyecto
 1. Clona este repositorio o copia los archivos .java en tu entorno local.
 2. Asegúrate de tener instalado Java (recomendado JDK 17 o superior).
