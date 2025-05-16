@@ -70,6 +70,7 @@ Elija una opción:
 - Michael Corrales : https://github.com/Michael089-ui
 - Estefani Silva : https://github.com/estefasilva
 - Sergio Roa : https://github.com/Sergio100295
+- Alejandra Paiva : https://github.com/Aleja955
 
 Equipo :Los Cazacontactos
 
