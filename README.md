@@ -27,9 +27,9 @@ Herramientas estándar de entrada/salida (Scanner, ArrayList)
 
 📁 AgendaTelefonica
 │
-├── Main.java             # Menú principal con interacción desde consola
-├── Agenda.java           # Lógica de almacenamiento y operaciones con contactos
-└── Contacto.java         # Clase base que representa un contacto
+├── Main.java  # Menú principal con interacción desde consola
+├── Agenda.java # Lógica de almacenamiento y operaciones con contactos
+└── Contacto.java # Clase base que representa un contacto
 
 ------------------------------------------------------------------------------------------------------------
 🚀 Cómo ejecutar el proyecto
