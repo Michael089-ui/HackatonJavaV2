@@ -60,3 +60,18 @@ Ejemplo de uso :
 6. Mostrar espacio libre
 7. Salir
 Elija una opción:
+
+--------------------------------
+
+👨‍💻 Autores
+💻 Proyecto realizado por el equipo del Hackatón 2025.
+
+🚀 Colaboradores:
+
+- Mj González :  https://github.com/CodingtheMJ
+- Michael Corrales : https://github.com/Michael089-ui
+- Estefani Silva : https://github.com/estefasilva
+- Sergio Roa : https://github.com/Sergio100295
+
+Equipo :Los Cazacontactos
+
